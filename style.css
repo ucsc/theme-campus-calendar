@@ -1,0 +1,14 @@
+/*!
+URI: https://github.com:ucsc/ucsc-localist-silk-wrapper.git
+Author: UC Santa Cruz Communications & Marketing
+Author URI: https://www.ucsc.edu
+Description: Custom styles for UC Santa Cruz Localist Silk Wrapper
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+*/
+.search .search_action {
+  width: 200px;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLnNjc3MiLCJfdWNzYy1zaWxrLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7O0VBUUU7QUNSRjtFQUVRLGFBQWE7Q0FDaEIiLCJmaWxlIjoic3R5bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyohXG5VUkk6IGh0dHBzOi8vZ2l0aHViLmNvbTp1Y3NjL3Vjc2MtbG9jYWxpc3Qtc2lsay13cmFwcGVyLmdpdFxuQXV0aG9yOiBVQyBTYW50YSBDcnV6IENvbW11bmljYXRpb25zICYgTWFya2V0aW5nXG5BdXRob3IgVVJJOiBodHRwczovL3d3dy51Y3NjLmVkdVxuRGVzY3JpcHRpb246IEN1c3RvbSBzdHlsZXMgZm9yIFVDIFNhbnRhIENydXogTG9jYWxpc3QgU2lsayBXcmFwcGVyXG5WZXJzaW9uOiAxLjAuMFxuTGljZW5zZTogR05VIEdlbmVyYWwgUHVibGljIExpY2Vuc2UgdjIgb3IgbGF0ZXJcbkxpY2Vuc2UgVVJJOiBMSUNFTlNFXG4qL1xuXG5AaW1wb3J0IFwidWNzYy1zaWxrXCI7IiwiLnNlYXJjaCB7XG4gICAgLnNlYXJjaF9hY3Rpb24ge1xuICAgICAgICB3aWR0aDogMjAwcHg7XG4gICAgfVxufSJdfQ== */
