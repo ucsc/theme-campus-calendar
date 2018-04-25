@@ -6,4 +6,4 @@ Description: Custom styles for UC Santa Cruz Localist Silk Wrapper
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-*/.search .search_action{width:200px}#top-search{background-color:#fff}
+*/.search .search_action{width:200px}#top-search{background-color:#fff}#top-submit{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
