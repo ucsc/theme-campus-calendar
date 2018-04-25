@@ -1,0 +1,31 @@
+{
+    "name": "ucsc-silk-wrapper",
+    "version": "1.0.0",
+    "description": "Additional CSS. Sass, gulp, Bourbon, Neat, and Composer.",
+    "repository": {
+        "type": "git",
+        "url": "git+https:https://github.com:ucsc/ucsc-localist-silk-wrapper.git"
+    },
+    "author": "UC Santa Cruz Communications and Marketing",
+    "license": "GPL-2",
+    "bugs": {
+        "url": "https://github.com/ucsc/ucsc-localist-silk-wrapper/issues"
+    },
+    "homepage": "https://github.com/ucsc/ucsc-localist-silk-wrapper#readme",
+    "devDependencies": {
+        "autoprefixer": "^6.7.6",
+        "bourbon": "^4.2.6",
+        "bourbon-neat": "^1.7.2",
+        "css-mqpacker": "^5.0.1",
+        "gulp": "^3.9.1",
+        "gulp-cssnano": "^2.1.2",
+        "gulp-notify": "^2.2.0",
+        "gulp-plumber": "^1.1.0",
+        "gulp-postcss": "^6.1.1",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^2.3.2",
+        "gulp-sass-lint": "^1.2.0",
+        "gulp-sourcemaps": "^1.6.0",
+        "sass-rem": "^1.2.2"
+    }
+}
