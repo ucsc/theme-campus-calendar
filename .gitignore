@@ -25,3 +25,4 @@ tests/mocks/env/
 # synctheme
 # pull-content
 # push-content
+gitmerge.sh
