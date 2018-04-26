@@ -1,6 +1,9 @@
     .search {
         .search_action {
             width: 200px;
+            @include media($breakpoint__screen-size--small) {
+                width: 100%;
+            }
         }
     }
     
