@@ -9,6 +9,9 @@
     
     #top-search {
         background-color: $white;
+        @include media($breakpoint__screen-size--small) {
+            width: 100%;
+        }
     }
     
     #top-submit {
