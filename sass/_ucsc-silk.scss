@@ -91,3 +91,20 @@
     .main .featured_carousel .featured_item_wrapper .item img {
         margin: 0;
     }
+    
+    .topbutton {
+        height: 50px;
+        width: 50px;
+        position: fixed;
+        right: 15px;
+        bottom: 30px;
+        z-index: 99999;
+        background-repeat: no-repeat;
+        display: none;
+        .fa {
+            color: #fff;
+            background-color: #fdc700;
+            padding: 0 5px 5px;
+            border-radius: 50%;
+        }
+    }
