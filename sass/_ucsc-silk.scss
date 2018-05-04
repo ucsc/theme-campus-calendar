@@ -77,6 +77,10 @@
     
     #main {
         .row {
+            .lift {
+                padding: 0 0 0 15px;
+                padding: 0 0 0 1.071em;
+            }
             .alpha {
                 padding: 0 15px 0 0;
                 padding: 0 1.071em 0 0;
@@ -84,10 +88,6 @@
             .omega {
                 padding: 53px 0 0 15px;
                 padding: 3.786em 0 0 1.071em;
-                .lift {
-                    padding: 0 0 0 15px;
-                    padding: 0 0 0 1.071em;
-                }
             }
         }
     }
