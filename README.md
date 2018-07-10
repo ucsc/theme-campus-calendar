@@ -76,3 +76,7 @@ The **gulp watch** task will continuously watch your `/assets/sass/` directory a
 ```console
 gulp watch
 ```
+
+## Push to GitHub Pages
+
+This SILK wrapper is hosted statically on GitHub on a branch called `gh-pages`.
