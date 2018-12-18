@@ -134,5 +134,9 @@
     border: none!important;
     a {
         background: none;
+        img {
+            max-width: 366px;
+            width: 100%;
+        }
     }
 }
