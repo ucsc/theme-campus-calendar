@@ -10,6 +10,17 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 */
+#wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
 [class^=icon-],
 [class*=" icon-"] {
   overflow: visible !important;

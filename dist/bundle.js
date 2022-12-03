@@ -33,6 +33,31 @@ jQuery(document).ready(function ($) {
   });
 });
 
+/***/ }),
+
+/***/ "./src/js/sidebar-fix.js":
+/*!*******************************!*\
+  !*** ./src/js/sidebar-fix.js ***!
+  \*******************************/
+/***/ (() => {
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ * @link https://premium.wpmudev.org/blog/back-to-top-button-wordpress/
+ */
+
+jQuery(document).ready(function ($) {
+  var targetClass = $("#main .row .omega");
+  var newClass = "lift";
+  if ($(".content-inner-pages")[0]) {
+    targetClass.addClass(newClass);
+  } else {
+    targetClass.removeClass(newClass);
+  }
+});
+
 /***/ })
 
 /******/ 	});
@@ -113,6 +138,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_back_to_top_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/back-to-top.js */ "./src/js/back-to-top.js");
 /* harmony import */ var _js_back_to_top_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_back_to_top_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _js_sidebar_fix_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/sidebar-fix.js */ "./src/js/sidebar-fix.js");
+/* harmony import */ var _js_sidebar_fix_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_sidebar_fix_js__WEBPACK_IMPORTED_MODULE_1__);
 
 
 })();

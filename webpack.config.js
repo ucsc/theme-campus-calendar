@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = {
+	mode: 'development',
 	entry: {
 		bundle: path.resolve(__dirname, './src/index.js'),
 		style: path.resolve(__dirname, './src/style.js'),
