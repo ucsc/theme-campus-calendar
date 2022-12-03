@@ -1,31 +1,30 @@
 {
-    "name": "ucsc-silk-wrapper",
-    "version": "1.1.0",
-    "description": "Additional CSS. Sass, gulp, Bourbon, Neat, and Composer.",
-    "repository": {
-        "type": "git",
-        "url": "git+https:https://github.com:ucsc/ucsc-localist-silk-wrapper.git"
-    },
-    "author": "UC Santa Cruz Communications and Marketing",
-    "license": "GPL-2",
-    "bugs": {
-        "url": "https://github.com/ucsc/ucsc-localist-silk-wrapper/issues"
-    },
-    "homepage": "https://github.com/ucsc/ucsc-localist-silk-wrapper#readme",
-    "devDependencies": {
-        "autoprefixer": "^6.7.6",
-        "bourbon": "^4.2.6",
-        "bourbon-neat": "^1.7.2",
-        "css-mqpacker": "^5.0.1",
-        "gulp": "^4.0.0",
-        "gulp-cssnano": "^2.1.2",
-        "gulp-notify": "^2.2.0",
-        "gulp-plumber": "^1.1.0",
-        "gulp-postcss": "^6.1.1",
-        "gulp-rename": "^1.2.2",
-        "gulp-sass": "^2.3.2",
-        "gulp-sass-lint": "^1.2.0",
-        "gulp-sourcemaps": "^1.6.0",
-        "sass-rem": "^1.2.2"
-    }
+  "name": "theme-campus-calendar",
+  "version": "1.0.0",
+  "description": "This is the SILK WRAPPER for the [UC Santa Cruz Events Calendar](https://calendar.ucsc.edu/), hosted on the [Localist](https://www.localist.com/) platform.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ucsc/theme-campus-calendar.git"
+  },
+  "keywords": [],
+  "author": "Jason <jchafin@ucsc.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ucsc/theme-campus-calendar/issues"
+  },
+  "homepage": "https://github.com/ucsc/theme-campus-calendar#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.7.2",
+    "mini-css-extract-plugin": "^2.7.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  }
 }
