@@ -1,0 +1,40 @@
+{
+  "name": "theme-campus-calendar",
+  "version": "1.0.0",
+  "description": "This is the SILK WRAPPER for the [UC Santa Cruz Events Calendar](https://calendar.ucsc.edu/), hosted on the [Localist](https://www.localist.com/) platform.",
+  "private": false,
+  "scripts": {
+    "start": "webpack serve --config ./webpack.config.js --mode development",
+    "build": "webpack --config ./webpack.config.js --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ucsc/theme-campus-calendar.git"
+  },
+  "keywords": [],
+  "author": "Jason <jchafin@ucsc.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ucsc/theme-campus-calendar/issues"
+  },
+  "homepage": "https://github.com/ucsc/theme-campus-calendar#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.7.2",
+    "mini-css-extract-plugin": "^2.7.1",
+    "postcss-loader": "^7.0.2",
+    "postcss-preset-env": "^7.8.3",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "presets": [
+    "@babel/preset-env"
+  ]
+}

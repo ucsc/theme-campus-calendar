@@ -1,2 +1,2 @@
 // import './hello.js';
-console.log('Hello World');
+console.log('Hello From Index');

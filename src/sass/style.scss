@@ -10,4 +10,6 @@ License URI: LICENSE
 
 @import './variables';
 @import './mixins';
-@import './ucsc-silk';
+@import 'mixins';
+@import 'variables';
+@import 'ucsc-silk';
