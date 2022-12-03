@@ -4,7 +4,8 @@
   "description": "This is the SILK WRAPPER for the [UC Santa Cruz Events Calendar](https://calendar.ucsc.edu/), hosted on the [Localist](https://www.localist.com/) platform.",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +23,16 @@
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.0",
     "css-loader": "^6.7.2",
+    "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.1",
+    "postcss-loader": "^7.0.2",
+    "postcss-preset-env": "^7.8.3",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.0"
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
   }
 }
