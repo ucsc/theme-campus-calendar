@@ -1,0 +1,32 @@
+// Base Colors
+//===================
+$white: #fff;
+$black: #222;
+$gray--lightestest: #ccc;
+$gray--lightest: #ddd;
+$gray--lighter: #eee;
+$gray--light: #777;
+$gray: #555;
+$red: #c3251d;
+$ucsc--primary-blue: #003c6c;
+$ucsc--primary-yellow: #fdc700;
+$ucsc--light-blue: #006aad;
+$ucsc--lighter-blue: #13a5dc;
+$ucsc--orange: #f29813;
+$ucsc--light-orange: #ffbf00;
+$ucsc--green: #93c02d;
+$ucsc--blue-green: #007988;
+$ucsc--magenta: #da216d;
+//
+// Device Screen Sizes
+//==========================
+// $screen-size--smallest: 320px;
+// $screen-size--smaller: 480px;
+$screen-size--small: 767px;
+$screen-size--medium: 959px;
+//
+// Breakpoints
+//============================
+$breakpoint__screen-size--medium: new-breakpoint(max-width $screen-size--medium 6);
+//@media only screen and (max-width: 860px) {
+$breakpoint__screen-size--small: new-breakpoint(max-width $screen-size--small 4);
