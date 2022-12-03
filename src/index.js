@@ -1,2 +1,2 @@
-// import './hello.js';
-console.log('Hello From Index');
+import './js/back-to-top.js';
+import './js/back-to-top.js';
