@@ -20,13 +20,10 @@ $ucsc--magenta: #da216d;
 //
 // Device Screen Sizes
 //==========================
-// $screen-size--smallest: 320px;
-// $screen-size--smaller: 480px;
 $screen-size--small: 767px;
 $screen-size--medium: 959px;
 //
 // Breakpoints
 //============================
 $breakpoint__screen-size--medium: new-breakpoint(max-width $screen-size--medium 6);
-//@media only screen and (max-width: 860px) {
 $breakpoint__screen-size--small: new-breakpoint(max-width $screen-size--small 4);
