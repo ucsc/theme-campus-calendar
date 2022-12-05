@@ -2,7 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-	mode: 'development',
+	mode: 'production',
 	entry: {
 		bundle: path.resolve(__dirname, './src/index.js'),
 		style: path.resolve(__dirname, './src/style.js'),
@@ -28,12 +28,8 @@ module.exports = {
 		filename: '[name].js',
 		clean: true
 	},
-	devServer: {
-		static: path.resolve(__dirname, './dist'),
-	},
-	devtool: 'source-map',
-	optimization: {
-		minimize: false
+		optimization: {
+		minimize: true
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
