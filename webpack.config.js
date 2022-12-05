@@ -27,6 +27,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, './dist'),
 		filename: '[name].js',
+		clean: true
 	},
 	devServer: {
 		static: path.resolve(__dirname, './dist'),
@@ -38,7 +39,7 @@ module.exports = {
 			// `...`,
 			new CssMinimizerPlugin(),
 		],
-		minimize: false
+		minimize: true
 	},
 	plugins: [
 		new MiniCssExtractPlugin({

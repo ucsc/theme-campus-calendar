@@ -20,10 +20,3 @@ tests/mocks/env/
 /dist
 
 .idea/
-
-# Rsync exclude file and scripts
-# rsync-exclude.txt
-# synctheme
-# pull-content
-# push-content
-gitmerge.sh
