@@ -41,7 +41,7 @@
 }
 
 .secondary-name {
-    float: left;
+    
     padding-right: 0 !important;
     .title-medium {
         @include media-query($breakpoint__screen-size--small)
@@ -52,7 +52,7 @@
 }
 
 .user-login {
-    float: right;
+
     #menu {
         .action_menu {
             @include media-query($breakpoint__screen-size--medium)

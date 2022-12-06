@@ -13,6 +13,13 @@
 	}
 }
 
+@mixin grid-media-query($device)
+{
+	@media screen and (min-width: $device)
+	{
+		@content;
+	}
+}
 @mixin relative-font-size($ratio)
 {
 	font-size: $base-font-size * $ratio;
@@ -21,6 +28,6 @@
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1)
 {
-	font-size: ($sizeValue * 10) * 1px;
-	font-size: $sizeValue * 1rem;
+	font-size: ($sizeValue * 8.75) * 1px;
+		font-size: $sizeValue * 1rem;
 }

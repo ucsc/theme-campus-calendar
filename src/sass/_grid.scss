@@ -6,22 +6,79 @@
 
 .content
 {
-	height: 100%;
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 100px 1fr min-content;
-	grid-template-areas: "header"
-		"main"
-		"footer";
-
-	.site-header
-	{
-		grid-area: header;
-	}
-
-	.site-header
-	{
-		grid-area: header;
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	@include grid-media-query($screen-size--small)
+		{
+			display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: min-content 1fr min-content;
+				grid-template-areas: "header"
+					"main"
+					"footer";
+		}
+	
+.header
+{
+	grid-area: header;
+	.ucsc-header
+		{
+	
+			background-color: #01589d;
+			padding: 10px 16px 12px 16px;
+	
+			.wrap
+			{
+				display: grid;
+				grid-template-columns: 1fr 100px;
+				margin-bottom:0
+			}
+	
+			.ucsc-header-right
+			{
+				display:none;
+	
+				#topNav
+				{
+					display: flex;
+				}
+			}
+	
+			.ucsc-header-left
+			{
+				justify-self: left;
+				.campus-logo {
+				text-indent: -10000px;
+					background: transparent url(https://static.ucsc.edu/_responsive/images/logos/uc-santa-cruz-2021-reverse.svg) no-repeat left top;
+					display: block;
+					width: 110px;
+					height: 24px;
+					margin-top: 4px;
+				}
+			}
+		}
+		.main-header
+		{
+			.wrap
+				{
+					display: grid;
+					grid-template-columns: 1fr 100px;
+					align-items:center;
+					margin: 1.5em auto 0.25em auto
+				}
+			.page-title {
+				.title{
+					font-size: 1.85rem;
+					margin: 0 0 0.25em;
+					font-family: "Roboto Condensed", sans-serif;
+						text-transform: uppercase;
+						line-height: 1.2;
+				}
+			}
+		}
 	}
 
 	.main
@@ -31,12 +88,118 @@
 
 	.main-footer
 	{
+		background-color: $ucsc--primary-blue;
 		grid-area: footer;
+		margin-top: calc($spacing-unit * 2);
+		padding: 40px 16px 80px 16px;
+		color: $white;
+		font-family: "Roboto Condensed", sans-serif;
+		font-weight: 400;
+		text-align: center;
+			.wrap
+			{
+				
+		
+				@include grid-media-query($screen-size--small)
+				{
+					grid-template-columns: 1fr 1fr;
+				}
+			}
+		
+			.footer-left, .footer-right, .sub-footer
+			{
+				width:100%;
+				grid-template-columns: auto;
+				grid-template-rows: auto;
+				display: block;
+				margin: 0 auto;
+				
+			}
+			.footer-left
+			{
+				@include grid-media-query($screen-size--small)
+				{
+					grid-template-columns: min-content 1fr;
+					align-items: center;
+					display: grid;
+					grid-template-columns: 1fr;
+					align-items: center;
+					justify-items: center;
+				}
+			}
+		
+			.footer-right
+			{}
+		
+			.sub-footer{}
+		
+			.legal
+			{
+				@include grid-media-query($screen-size--small){
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					font-size: 0.8em;
+					}
+				
+		
+				li::after
+				{
+					background-color: #f1af13;
+					width: 5px;
+					height: 5px;
+					border-radius: 50%;
+					content: "";
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: -0.75em;
+					margin-left: -2.5px;
+					margin-top: -2.5px;
+				}
+		
+				a
+				{
+					color: $white;
+					text-decoration: underline;
+					text-transform: uppercase;
+				}
+			}
 	}
 }
 
-#main
+.wrap
 {
-	max-width: 67.5em;
-	margin: 0 auto;
+	max-width: 100%;
+	margin: 0 auto 16px;
+	padding: 0 1em;
+	display: block;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	@include grid-media-query($screen-size--small){
+		max-width: $max-width;
+}
+	
+	}
+	
+	// #topNav,
+	// .global-nav
+	// {
+	// 	margin: 10px 0;
+	// }
+	
+	// #topNav li,
+	// .global-nav li
+	// {
+	// 	display: inline-block;
+	// 	width: 48%;
+	// 	margin: 0 0 10px 0;
+	// 	padding: 0;
+	// 	list-style: none;
+	// }
+	
+	#topNav a,
+	.global-nav a
+	{
+		color: #fff;
 }
