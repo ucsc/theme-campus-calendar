@@ -1,0 +1,42 @@
+#container,
+.container
+{
+	background: transparent
+}
+
+.content
+{
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 100px 1fr min-content;
+	grid-template-areas: "header"
+		"main"
+		"footer";
+
+	.site-header
+	{
+		grid-area: header;
+	}
+
+	.site-header
+	{
+		grid-area: header;
+	}
+
+	.main
+	{
+		grid-area: main;
+	}
+
+	.main-footer
+	{
+		grid-area: footer;
+	}
+}
+
+#main
+{
+	max-width: 67.5em;
+	margin: 0 auto;
+}
