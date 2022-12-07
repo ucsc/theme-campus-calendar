@@ -23,10 +23,13 @@
 	
 .header
 {
-	grid-area: header;
+	@include grid-media-query($screen-size--small)
+		{
+		grid-area: header;
+	}
 	.ucsc-header
 		{
-	
+			
 			background-color: #01589d;
 			padding: 10px 16px 12px 16px;
 	
@@ -34,16 +37,54 @@
 			{
 				display: grid;
 				grid-template-columns: 1fr 100px;
-				margin-bottom:0
+				margin-bottom:0;
+				@include grid-media-query($screen-size--small){
+					grid-template-columns: 1fr min-content;
+				}
 			}
 	
 			.ucsc-header-right
 			{
+				@include grid-media-query($screen-size--small){
+				display: grid;
+				grid-template-columns:max-content min-content;
+				grid-column-start: 2;
+				grid-column-end: 3;
+				align-items:center;
+				}
+
 				display:none;
 	
 				#topNav
 				{
-					display: flex;
+					padding-right:20px;
+					@include grid-media-query($screen-size--small){
+						display: flex;
+				}
+					li
+					{
+						display: inline-block;
+						position: relative;
+						margin-left: 1.5em;
+						line-height: 1.5;
+						&:first-child::after{
+							display:none;
+						}
+						&::after
+						{
+							background-color: #f1af13;
+							width: 5px;
+							height: 5px;
+							border-radius: 50%;
+							content: "";
+							display: block;
+							position: absolute;
+							top: 50%;
+							left: -0.75em;
+							margin-left: -2.5px;
+							margin-top: -2.5px;
+						}
+					}
 				}
 			}
 	
@@ -59,6 +100,10 @@
 					width: 110px;
 					height: 24px;
 					margin-top: 4px;
+				}
+				@include grid-media-query($screen-size--small){
+					grid-column-start: 1;
+						grid-column-end: 2;
 				}
 			}
 		}
@@ -172,23 +217,27 @@
 				}
 			}
 		
-			.sub-footer{}
-		
+			.sub-footer{
 			.legal
-			{
-				@include rem-font-size(.8);
-				@include grid-media-query($screen-size--small){
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-					font-size: 0.8em;
-					}				
-				li {
-					display:inline-block;
-					position:relative;
-					margin-left:1.5em;
-					line-height:1.5;
-					&::after
+				{
+					@include rem-font-size(.8);
+			
+					@include grid-media-query($screen-size--small)
+					{
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						font-size: 0.8em;
+					}
+			
+					li
+					{
+						display: inline-block;
+						position: relative;
+						margin-left: 1.5em;
+						line-height: 1.5;
+			
+						&::after
 						{
 							background-color: #f1af13;
 							width: 5px;
@@ -202,8 +251,11 @@
 							margin-left: -2.5px;
 							margin-top: -2.5px;
 						}
+					}
 				}
 			}
+		
+			
 	}
 }
 
