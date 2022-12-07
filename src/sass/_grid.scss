@@ -163,7 +163,8 @@
 		
 				@include grid-media-query($screen-size--small)
 				{
-					grid-template-columns: 1fr 1fr;
+					display:grid;
+					grid-template-columns: max-content 1fr;
 				}
 			}
 		
@@ -172,7 +173,7 @@
 				width:100%;
 				grid-template-columns: auto;
 				grid-template-rows: auto;
-				display: block;
+				
 				margin: 0 auto;
 				
 					margin-bottom: 3em;
@@ -185,13 +186,16 @@
 					grid-template-columns: min-content 1fr;
 					align-items: center;
 					display: grid;
-					grid-template-columns: 1fr;
+					
 					align-items: center;
 					justify-items: center;
 				}
 			.address
 			{
-
+				@include grid-media-query($screen-size--small){
+				padding-top: 0;
+				padding-left: calc($spacing-unit * 0.625);
+			}
 				padding-top: calc($spacing-unit * 0.625);
 
 				.location
@@ -200,34 +204,54 @@
 					padding-right: 0;
 					font-weight: 700;
 					margin-bottom: 3px;
+					@include grid-media-query($screen-size--small) {justify-self: left;
+						align-self: left;
+						text-align: left;
+					}
+
 				}
 				.copyright
 				{
 					@include rem-font-size(.8);
 					padding-right: 0;
 					margin-bottom: 3px;
+					@include grid-media-query($screen-size--small)
+						{
+							justify-self: left;
+							align-self: left;
+							text-align: left;
+						}
 				}
 			}
 						
 			}
 		
 			.footer-right{
+				@include grid-media-query($screen-size--small){
+					justify-self: right;
+						align-self: center;
+						text-align: right;
+				}
 				.links{
 					@include rem-font-size(.8);
 				}
 			}
 		
 			.sub-footer{
+				@include grid-media-query($screen-size--small){
+					grid-column: 1 / 3;
+					justify-self:center;
+			}
 			.legal
 				{
 					@include rem-font-size(.8);
 			
 					@include grid-media-query($screen-size--small)
 					{
-						display: flex;
-						justify-content: space-between;
-						align-items: center;
-						font-size: 0.8em;
+						// display: flex;
+						// justify-content: space-between;
+						// align-items: center;
+						// font-size: 0.8em;
 					}
 			
 					li
