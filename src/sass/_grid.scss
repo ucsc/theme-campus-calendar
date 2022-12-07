@@ -96,6 +96,12 @@
 		font-family: "Roboto Condensed", sans-serif;
 		font-weight: 400;
 		text-align: center;
+		text-transform: uppercase;
+		a
+			{
+				color: $white;
+				text-decoration: underline;
+			}
 			.wrap
 			{
 				
@@ -114,9 +120,11 @@
 				display: block;
 				margin: 0 auto;
 				
+					margin-bottom: 3em;
 			}
 			.footer-left
 			{
+				
 				@include grid-media-query($screen-size--small)
 				{
 					grid-template-columns: min-content 1fr;
@@ -126,43 +134,64 @@
 					align-items: center;
 					justify-items: center;
 				}
+			.address
+			{
+
+				padding-top: calc($spacing-unit * 0.625);
+
+				.location
+				{
+					@include rem-font-size(.91425);
+					padding-right: 0;
+					font-weight: 700;
+					margin-bottom: 3px;
+				}
+				.copyright
+				{
+					@include rem-font-size(.8);
+					padding-right: 0;
+					margin-bottom: 3px;
+				}
+			}
+						
 			}
 		
-			.footer-right
-			{}
+			.footer-right{
+				.links{
+					@include rem-font-size(.8);
+				}
+			}
 		
 			.sub-footer{}
 		
 			.legal
 			{
+				@include rem-font-size(.8);
 				@include grid-media-query($screen-size--small){
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
 					font-size: 0.8em;
-					}
-				
-		
-				li::after
-				{
-					background-color: #f1af13;
-					width: 5px;
-					height: 5px;
-					border-radius: 50%;
-					content: "";
-					display: block;
-					position: absolute;
-					top: 50%;
-					left: -0.75em;
-					margin-left: -2.5px;
-					margin-top: -2.5px;
-				}
-		
-				a
-				{
-					color: $white;
-					text-decoration: underline;
-					text-transform: uppercase;
+					}				
+				li {
+					display:inline-block;
+					position:relative;
+					margin-left:1.5em;
+					line-height:1.5;
+					&::after
+						{
+							background-color: #f1af13;
+							width: 5px;
+							height: 5px;
+							border-radius: 50%;
+							content: "";
+							display: block;
+							position: absolute;
+							top: 50%;
+							left: -0.75em;
+							margin-left: -2.5px;
+							margin-top: -2.5px;
+						}
 				}
 			}
 	}

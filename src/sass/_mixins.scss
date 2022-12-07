@@ -26,8 +26,8 @@
 }
 
 // Rem output with px fallback
-@mixin font-size($sizeValue: 1)
+@mixin rem-font-size($sizeValue: 1)
 {
-	font-size: ($sizeValue * 8.75) * 1px;
-		font-size: $sizeValue * 1rem;
+	font-size: ($sizeValue * 14) * 1px;
+		font-size: $sizeValue * 0.875rem;
 }
