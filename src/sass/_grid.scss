@@ -49,6 +49,8 @@
 	
 			.ucsc-header-left
 			{
+				grid-column-start: 1;
+				grid-column-end: 3;
 				justify-self: left;
 				.campus-logo {
 				text-indent: -10000px;
@@ -76,6 +78,14 @@
 					font-family: "Roboto Condensed", sans-serif;
 						text-transform: uppercase;
 						line-height: 1.2;
+				}
+			}
+			.user-login {
+				#menu {
+					.action_menu{
+							top:0;
+							right:0
+					}
 				}
 			}
 		}
