@@ -18,7 +18,7 @@ module.exports = {
 			{
 				test: /\.(scss|css)$/,
 				use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-			},
+			}
 		]
 	},
 	resolve: {
@@ -40,14 +40,10 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: '[name].css'
 		}), 
-		new HtmlWebpackPlugin({
-			title: 'Events Calendar - Events at UC Santa Cruz',
-			// Load a custom template (lodash by default)
-			template: './src/index.html'
-		}),
 		new CopyPlugin({
 			patterns: [
 				{ from: "./src/images", to: "images" },
+				{ from: "./src/index.html", to: "index.html" },
 			],
 		}), 
   ],
