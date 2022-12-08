@@ -48,6 +48,6 @@ jobs:
     - name: Test arifact download
       run: ls -R
     - name: Git branch
-      run: git branch
+      run: git branch && ls -R
 
     
