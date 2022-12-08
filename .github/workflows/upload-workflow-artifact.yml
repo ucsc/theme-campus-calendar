@@ -56,5 +56,33 @@ jobs:
         git add .
         git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
         git push origin test
+  herm71-branch:
+    name: Herm71 deploy 
+    runs-on: ubuntu-latest
+    needs: release-branch
+    steps:
+    - name: Checkout Pages repo
+      uses: actions/checkout@v3
+      with:
+        repository: Herm71/Herm71.github.io
+        ref: main
+    - name: After checkout clean branch
+      run: rm -rf * && ls -R
+    - name: Download latest build
+      uses: actions/download-artifact@v3
+      with:
+        name: branch-build
+        path: build
+    - name: Copy files from build to root and delete build dir
+      run: cp -R ./build/* . &&  rm -rf ./build
+    - name: Check git branch and status
+      run: git branch && git status
+    - name: Git add files, commit and push
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add .
+        git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
+        git push origin main
 
     
