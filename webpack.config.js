@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
 	mode: 'development',
 	entry: {
@@ -38,11 +39,17 @@ module.exports = {
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: '[name].css'
-		}), new HtmlWebpackPlugin({
+		}), 
+		new HtmlWebpackPlugin({
 			title: 'Events Calendar - Events at UC Santa Cruz',
 			// Load a custom template (lodash by default)
 			template: './src/index.html'
-		})
+		}),
+		new CopyPlugin({
+			patterns: [
+				{ from: "./src/images", to: "images" },
+			],
+		}), 
   ],
 
 };
