@@ -42,6 +42,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: branch-build
+        path: build
     - name: Test arifact download
       run: ls -R
     
