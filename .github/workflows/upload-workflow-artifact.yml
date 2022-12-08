@@ -47,6 +47,8 @@ jobs:
         path: build
     - name: Test arifact download
       run: ls -R
+    - name: Copy files from download to root
+      run: cp -R ./build/* . && ls -R
     - name: Git branch and status
       run: git branch && git status
 
