@@ -1,4 +1,5 @@
-name: Build and Deploy
+name: build-and-deploy
+run-name: ${{ github.actor }} is deploying
 on:
   push:
     branches:
@@ -6,39 +7,55 @@ on:
 permissions:
   contents: write
 jobs:
-  build-and-deploy:
-    # concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+  build-branch:
+    name: Build branch
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: |
-          npm ci
-          npm run build
-  copy:
-    name: Copy my folder
+    - name: Checkout code from branch
+      uses: actions/checkout@v3
+    - name: Install node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+    - name: Install dependencies
+      run: npm install
+    - name: Build project
+      run: npm run build
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: branch-build
+        path: dist
+    - uses: technote-space/workflow-conclusion-action@v1
+      with:
+        status: ${{ env.WORKFLOW_CONCLUSION }}
+  release-branch:
+    name: Release branch
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
+    needs: build-branch
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: |
-          npm ci
-          npm run build
-      - name: copy
-        env:
-          SRC_FOLDER_PATH: 'dist'
-          TARGET_BRANCH: 'gh-pages'
-        run: |
-          files=$(find $SRC_FOLDER_PATH -type f) # get the file list
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git fetch                         # fetch branches
-          git checkout $TARGET_BRANCH       # checkout to your branch
-          git checkout Herm71/issue3 -- $files # copy files from the source branch
-          git add -A
-          git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
-          git push origin $TARGET_BRANCH # push to remote branch
+    - name: Checkout code from gh-pages branch
+      uses: actions/checkout@v3
+      with: 
+        ref: gh-pages
+    - name: After checkout clean branch
+      run: rm -rf * && ls -R
+    - name: Download latest build
+      uses: actions/download-artifact@v3
+      with:
+        name: branch-build
+        path: build
+    - name: Copy files from build to root and delete build dir
+      run: cp -R ./build/* . &&  rm -rf ./build
+    - name: Check git branch and status
+      run: git branch && git status
+    - name: Git add files, commit and push
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add .
+        git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
+        git push origin gh-pages
+  
