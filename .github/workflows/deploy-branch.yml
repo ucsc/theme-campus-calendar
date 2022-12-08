@@ -1,16 +1,12 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+on:
+  push:
+    branches:
+      - 'Herm71/issue3'
+permissions:
+  contents: write
 jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
   copy-dist:
     runs-on: ubuntu-latest
     steps:
@@ -23,8 +19,15 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
            name: test-build
-           path: dist
+           path: dist/*
       - uses: actions/checkout@v3
         with:
-          ref: gh-pages
+          ref: test
+      - uses: actions/download-artifact@v3
+        with:
+          name: test-build
+    
+      - name: Display structure of downloaded files
+        run: ls -R
+      
     
