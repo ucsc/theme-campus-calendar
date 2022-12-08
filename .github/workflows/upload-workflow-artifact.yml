@@ -34,10 +34,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-branch
     steps:
-    - name: Checkout code from test branch
-      uses: actions/checkout@v3
-      with: 
-        ref: test
     - name: Download artifacts
       uses: actions/download-artifact@v3
       with:
@@ -45,4 +41,9 @@ jobs:
         path: build
     - name: Test arifact download
       run: ls -R
+    - name: Checkout code from test branch
+      uses: actions/checkout@v3
+      with: 
+        ref: test
+      run: cd && ls -R
     
