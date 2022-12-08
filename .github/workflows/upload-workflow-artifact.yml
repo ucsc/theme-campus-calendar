@@ -33,25 +33,22 @@ jobs:
     name: Release branch
     runs-on: ubuntu-latest
     needs: build-branch
-    env:
-        SRC_FOLDER_PATH: './build'
-        TARGET_BRANCH: 'test'
     steps:
     - name: Checkout code from test branch
       uses: actions/checkout@v3
       with: 
-        ref: $TARGET_BRANCH
+        ref: test
     - name: Post checkout clean
       run: rm -rf * && ls -R
     - name: Download artifacts
       uses: actions/download-artifact@v3
       with:
         name: branch-build
-        path: $SRC_FOLDER_PATH
+        path: build
     - name: Test arifact download
       run: ls -R
     - name: Copy files from download to root
-      run: cp -R $SRC_FOLDER_PATH/* . &&  rm -rf $SRC_FOLDER_PATH && ls -R
+      run: cp -R ./build/* . &&  rm -rf ./build && ls -R
     - name: Git branch and status
       run: git branch && git status
     - name: Git add files and status
