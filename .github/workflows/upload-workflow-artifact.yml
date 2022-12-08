@@ -1,0 +1,28 @@
+name: upload-workflow-artifact
+run-name: ${{ github.actor }} is uploading an artifact
+on:
+  push:
+    branches:
+      - 'Herm71/issue3'
+permissions:
+  contents: write
+jobs:
+  upload-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: npm install
+      - run: npm run build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: test-build
+          path: dist/*
+      - uses: technote-space/workflow-conclusion-action@v1
+        with:
+          status: ${{ env.WORKFLOW_CONCLUSION }}
+      
+      
+    
