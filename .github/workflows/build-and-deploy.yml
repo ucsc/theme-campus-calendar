@@ -3,7 +3,10 @@ run-name: ${{ github.actor }} is building and deploying
 on:
   push:
     branches:
-      - 'Herm71/issue3'
+      #- '*'         # matches every branch that doesn't contain a '/'
+      #- '*/*'       # matches every branch containing a single '/'
+      - '**'        # matches every branch
+      - '!master'   # excludes master
 permissions:
   contents: write
 jobs:
