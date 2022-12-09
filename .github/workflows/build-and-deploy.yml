@@ -1,5 +1,5 @@
 name: build-and-deploy
-run-name: ${{ github.actor }} is deploying
+run-name: ${{ github.actor }} is building and deploying
 on:
   push:
     branches:
@@ -27,9 +27,6 @@ jobs:
       with:
         name: branch-build
         path: dist
-    - uses: technote-space/workflow-conclusion-action@v1
-      with:
-        status: ${{ env.WORKFLOW_CONCLUSION }}
   release-branch:
     name: Release branch
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
@@ -60,4 +57,5 @@ jobs:
         git add .
         git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
         git push origin gh-pages
+
   
