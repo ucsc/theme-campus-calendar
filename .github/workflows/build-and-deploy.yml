@@ -52,12 +52,16 @@ jobs:
       run: cp -R ./build/* . &&  rm -rf ./build
     - name: Check git branch and status
       run: git branch && git status
-    - name: Git add files, commit and push
+    - name: Git add files and commit
       run: |
         git config --global user.name 'GitHub Action'
         git config --global user.email 'action@github.com'
         git add .
         git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
-        git push origin gh-pages
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
 
   
