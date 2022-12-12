@@ -48,6 +48,6 @@ jobs:
       id: deployment
       uses: actions/deploy-pages@v1
       with:
-        name: branch-child
+        artfact_name: branch-child
 
   
