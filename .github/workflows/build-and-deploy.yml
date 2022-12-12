@@ -50,7 +50,6 @@ jobs:
       with:
         name: branch-build
         path: build
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
     - name: Copy files from build to root and delete build dir
       run: cp -R ./build/* . &&  rm -rf ./build
     - name: Check git branch and status
@@ -60,11 +59,10 @@ jobs:
         git config --global user.name 'GitHub Action'
         git config --global user.email 'action@github.com'
         git add .
-        git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
+        git diff-index --quiet HEAD || git commit -am "deploy files"  # commit to the repository (ignore if no modification)
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
 
   
