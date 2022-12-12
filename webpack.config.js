@@ -34,7 +34,7 @@ module.exports = {
 	},
 	devtool: 'source-map',
 	optimization: {
-		minimize: false
+		minimize: true
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
