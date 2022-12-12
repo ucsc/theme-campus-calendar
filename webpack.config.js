@@ -1,6 +1,5 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
 	mode: 'development',
@@ -18,7 +17,7 @@ module.exports = {
 			{
 				test: /\.(scss|css)$/,
 				use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-			},
+			}
 		]
 	},
 	resolve: {
@@ -34,22 +33,18 @@ module.exports = {
 	},
 	devtool: 'source-map',
 	optimization: {
-		minimize: false
+		minimize: true
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: '[name].css'
-		}), 
-		new HtmlWebpackPlugin({
-			title: 'Events Calendar - Events at UC Santa Cruz',
-			// Load a custom template (lodash by default)
-			template: './src/index.html'
 		}),
 		new CopyPlugin({
 			patterns: [
 				{ from: "./src/images", to: "images" },
+				{ from: "./src/index.html", to: "index.html" },
 			],
-		}), 
-  ],
+		}),
+	],
 
 };
