@@ -18,7 +18,7 @@ module.exports = {
 			{
 				test: /\.(scss|css)$/,
 				use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-			},
+			}
 		]
 	},
 	resolve: {
@@ -34,7 +34,7 @@ module.exports = {
 	},
 	devtool: 'source-map',
 	optimization: {
-		minimize: false
+		minimize: true
 	},
 	plugins: [
 		new MiniCssExtractPlugin({

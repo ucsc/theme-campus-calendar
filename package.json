@@ -1,13 +1,13 @@
 {
   "name": "theme-campus-calendar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is the SILK WRAPPER for the [UC Santa Cruz Events Calendar](https://calendar.ucsc.edu/), hosted on the [Localist](https://www.localist.com/) platform.",
   "private": false,
   "scripts": {
     "start": "webpack serve --config ./webpack.config.js --live-reload",
     "build": "webpack --config ./webpack.config.js",
     "build-watch": "webpack --config ./webpack.config.js --watch",
-    "prod": "webpack --config ./webpack.prod.js"
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "babel-loader": "^9.1.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.2",
+    "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.1",
     "postcss-loader": "^7.0.2",

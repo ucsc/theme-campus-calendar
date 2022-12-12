@@ -13,6 +13,13 @@ Clone repo locally, `cd` into it and run `npm install`.
 
 [Webpack](https://webpack.js.org/) is used to compile `html`, `js`, and `css` from the `src/` to the `dist/` directory. Final code is deployed from the `dist/` directory.
 
-## Push to GitHub Pages
+**scripts:** the `package.json` has three scripts:
 
-This SILK wrapper is hosted statically on GitHub on a branch called `gh-pages`.
+- `start` starts the webserver serving from the `dist` directory
+- `build` builds the source files into the `dist` directory
+- `build-watch` watches the source files for changes and automatically builds
+- 'release' for running `standard-version`
+
+## Master vs Dev branches
+
+Master branch is hosted on Netlify and dev branches are hosted on Github Pages

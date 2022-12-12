@@ -1,0 +1,68 @@
+name: build-and-deploy
+run-name: ${{ github.actor }} is building and deploying
+on:
+  push:
+    branches:
+      #- '*'         # matches every branch that doesn't contain a '/'
+      #- '*/*'       # matches every branch containing a single '/'
+      - '**'        # matches every branch
+      - '!master'   # excludes master
+      - '!Herm71/issue3'   # excludes Herm71/issue3
+permissions:
+  contents: write
+jobs:
+  build-branch:
+    name: Build branch
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code from branch
+      uses: actions/checkout@v3
+    - name: Install node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+    - name: Install dependencies
+      run: npm install
+    - name: Build project
+      run: npm run build
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: branch-build
+        path: dist
+  release-branch:
+    name: Release branch
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    needs: build-branch
+    steps:
+    - name: Checkout code from gh-pages branch
+      uses: actions/checkout@v3
+      with: 
+        ref: gh-pages
+    - name: Check branch and status
+      run: git branch && git status && ls -R
+    - name: After checkout clean branch
+      run: rm -rf * && ls -R
+    - name: Download latest build
+      uses: actions/download-artifact@v3
+      with:
+        name: branch-build
+        path: build
+    - name: Copy files from build to root and delete build dir
+      run: cp -R ./build/* . &&  rm -rf ./build
+    - name: Check git branch and status
+      run: git branch && git status
+    - name: Git add files and commit
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add .
+        git diff-index --quiet HEAD || git commit -am "deploy files"  # commit to the repository (ignore if no modification)
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        branch: gh-pages
+
+  

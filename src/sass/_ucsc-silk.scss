@@ -11,7 +11,7 @@
 .search {
     .search_action {
         width: 200px;
-        @include media-query($breakpoint__screen-size--small)
+        @include media-query($screen-size--small)
             {
             width: 100%;
         }
@@ -23,7 +23,7 @@
 
 #top-search {
     background-color: $white;
-    @include media-query($breakpoint__screen-size--small)
+    @include media-query($screen-size--small)
         {
         width: 100%;
     }
@@ -44,18 +44,22 @@
     
     padding-right: 0 !important;
     .title-medium {
-        @include media-query($breakpoint__screen-size--small)
+        @include media-query($screen-size--small)
             {
             padding-right: 0px !important;
         }
     }
+}
+.user-login
+{
+    float: right;
 }
 
 .user-login {
 
     #menu {
         .action_menu {
-            @include media-query($breakpoint__screen-size--medium)
+            @include media-query($screen-size--medium)
                 {
                 top: 0px !important;
                 right: 0px !important;
@@ -67,7 +71,7 @@
 .hamburger {
     .mobile-menu {
         display: none;
-        @include media-query($breakpoint__screen-size--small)
+        @include media-query ($screen-size--small)
             {
             overflow: hidden;
             text-indent: 101%;
