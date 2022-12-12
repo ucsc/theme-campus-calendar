@@ -7,7 +7,6 @@ on:
       #- '*/*'       # matches every branch containing a single '/'
       - '**'        # matches every branch
       - '!master'   # excludes master
-      - '!Herm71/issue3'   # excludes Herm71/issue3
 permissions:
   contents: write
 jobs:
