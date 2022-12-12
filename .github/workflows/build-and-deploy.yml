@@ -30,7 +30,6 @@ jobs:
       with:
         name: branch-build
         path: dist
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
   release-branch:
     name: Release branch
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
