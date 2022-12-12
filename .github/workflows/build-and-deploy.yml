@@ -10,7 +10,7 @@ on:
 permissions:
   contents: write
 jobs:
-  build-branch:
+  build:
     name: Build branch
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
@@ -30,38 +30,22 @@ jobs:
       with:
         name: branch-build
         path: dist
-  release-branch:
+  deploy:
     name: Release branch
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
-    needs: build-branch
+    needs: build
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-    - name: Checkout code from gh-pages branch
-      uses: actions/checkout@v3
-      with: 
-        ref: test
-    - name: Check branch and status
-      run: git branch && git status && ls -R
-    - name: After checkout clean branch
-      run: rm -rf * && ls -R
-    - name: Download latest build
-      uses: actions/download-artifact@v3
-      with:
-        name: branch-build
-        path: build
-    - name: Copy files from build to root and delete build dir
-      run: cp -R ./build/* . &&  rm -rf ./build
-    - name: Check git branch and status
-      run: git branch && git status
-    - name: Git add files and commit
-      run: |
-        git config --global user.name 'GitHub Action'
-        git config --global user.email 'action@github.com'
-        git add .
-        git diff-index --quiet HEAD || git commit -am "deploy files"  # commit to the repository (ignore if no modification)
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        branch: test
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
 
   
