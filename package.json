@@ -1,6 +1,6 @@
 {
   "name": "theme-campus-calendar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is the SILK WRAPPER for the [UC Santa Cruz Events Calendar](https://calendar.ucsc.edu/), hosted on the [Localist](https://www.localist.com/) platform.",
   "private": false,
   "scripts": {
