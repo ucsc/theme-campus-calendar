@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --config ./webpack.config.js --live-reload",
     "build": "webpack --config ./webpack.config.js",
-    "build-watch": "webpack --config ./webpack.config.js --watch"
+    "build-watch": "webpack --config ./webpack.config.js --watch",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",

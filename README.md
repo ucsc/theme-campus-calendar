@@ -18,6 +18,7 @@ Clone repo locally, `cd` into it and run `npm install`.
 - `start` starts the webserver serving from the `dist` directory
 - `build` builds the source files into the `dist` directory
 - `build-watch` watches the source files for changes and automatically builds
+- 'release' for running `standard-version`
 
 ## Master vs Dev branches
 
