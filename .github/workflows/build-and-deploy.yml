@@ -39,7 +39,7 @@ jobs:
     - name: Checkout code from gh-pages branch
       uses: actions/checkout@v3
       with: 
-        ref: gh-pages
+        ref: test
     - name: Check branch and status
       run: git branch && git status && ls -R
     - name: After checkout clean branch

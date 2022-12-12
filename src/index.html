@@ -13,16 +13,16 @@
     <link href="https://www.ucsc.edu/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!--UC Santa Cruz Styles-->
-    <link href="https://static.ucsc.edu/_responsive/css/ucsc.css?t=20180412082400" rel="stylesheet" type="text/css" />
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="https://nimble-granita-6c7415.netlify.app/style.css" rel="stylesheet">
+    <!-- link href="https://static.ucsc.edu/_responsive/css/ucsc.css?t=20180412082400" rel="stylesheet" type="text/css" /-->
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <link href="https://ucsc.github.io/theme-campus-calendar/style.css" rel="stylesheet">
     <!--UC Santa Cruz jQuery and Javascript-->
     <script src="https://static.ucsc.edu/_responsive/lib/modernizr/modernizr.js" type="text/javascript"></script>
     <script src="https://static.ucsc.edu/_responsive/lib/jquery/dist/jquery.js" type="text/javascript"></script>
     <script async="async" src="https://static.ucsc.edu/_responsive/js/main.js?t=20180409144600"
         type="text/javascript"></script>
-    <script src="bundle.js" type="text/javascript"></script>
-    <script type='text/javascript' src='https://nimble-granita-6c7415.netlify.app/bundle.js'></script>
+    <script src="./bundle.js" type="text/javascript"></script>
+    <script type='text/javascript' src='https://ucsc.github.io/theme-campus-calendar/bundle.js'></script>
     <!-- script defer="true" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script -->
     <!-- END BLOCK: included uniform campus head  -->
 
@@ -42,31 +42,26 @@
 
     <!-- LOCALIST COMMENT - START before_grid -->
 
-    <div id="wrap">
-        <div id="container">
-            <div id="content">
-
-                <div class="site-header" role="banner">
-                    <div class="page-top">
-                        <div class="row">
-
-                            <div class="page-top-left hamburger">
-                                <a class="campus-secondary" href="https://www.ucsc.edu/index.html" id="logo">UC Santa
-                                    Cruz</a>
-                                <a class="mobile-menu" href="#mainNav"></a>
-                            </div>
-
-                            <div class="page-top-right">
-                                <ul id="topNav">
-                                    <li><a href="https://my.ucsc.edu" title="The student portal">MyUCSC</a></li>
-                                    <li><a href="https://www.ucsc.edu/tools/people.html"
-                                            title="Campus directory">People</a></li>
-                                    <li><a href="https://www.ucsc.edu/tools/calendars.html"
-                                            title="Upcoming events, academic, and administrative calendars">Calendars</a>
-                                    </li>
-                                    <li><a href="https://www.ucsc.edu/visit/maps-directions.html">Maps</a></li>
-                                    <li><a href="https://www.ucsc.edu/tools/azindex.html"
-                                            title="A to Z index of UCSC websites">A-Z Index</a></li>
+    <div id="container" class="container">
+        <div id="content" class="content">
+            <header class="header" role="banner">
+                <div class="ucsc-header">
+                    <div class="wrap">
+                        <div class="ucsc-header-left hamburger">
+                            <a class="campus-logo" href="https://www.ucsc.edu/index.html" id="logo">UC Santa
+                                Cruz</a>
+                            <a class="mobile-menu" href="#mainNav"></a>
+                        </div>
+                        <div class="ucsc-header-right">
+                            <ul id="topNav">
+                                <li><a href="https://my.ucsc.edu" title="The student portal">MyUCSC</a></li>
+                                <li><a href="https://www.ucsc.edu/tools/people.html" title="Campus directory">People</a>
+                                </li>
+                                <li><a href="https://www.ucsc.edu/tools/calendars.html"
+                                        title="Upcoming events, academic, and administrative calendars">Calendars</a>
+                                </li>
+                                <li><a href="https://www.ucsc.edu/visit/maps-directions.html">Maps</a></li>
+                                <li><a href="https://www.ucsc.edu/tools/azindex.html" title="A to Z index of UCSC websites">A-Z Index</a></li>
                                 </ul>
                                 <div class="search" role="search">
                                     <!-- LOCALIST COMMENT - PLACEHOLDER search_bar -->
@@ -133,19 +128,18 @@
 
                     </div>
                     <span class="sub-footer">
-                            <ul class="legal">
-                                <li><a href="http://academicaffairs.ucsc.edu/accreditation/">Accreditation</a></li>
-                                <li><a
-                                        href="http://diversity.ucsc.edu/eeo-aa/images/non-discrimination.pdf">Non-Discrimination&#160;Policy</a>
-                                </li>
-                                <li><a href="http://www.ucsc.edu/about/employment.html">Employment</a></li>
-                                <li><a href="http://its.ucsc.edu/terms/">Privacy&#160;Policy&#160;&amp;&#160;Terms&#160;of&#160;Use</a>
-                                </li>
-                                <li><a href="http://safe.ucsc.edu">Sexual&#160;Violence&#160;Prevention&#160;&amp;&#160;Response</a>
-                                </li>
+                        <ul class="legal">
+                            <li><a href="http://academicaffairs.ucsc.edu/accreditation/">Accreditation</a></li>
+                            <li><a href="http://diversity.ucsc.edu/eeo-aa/images/non-discrimination.pdf">Non-Discrimination&#160;Policy</a>
+                            </li>
+                            <li><a href="http://www.ucsc.edu/about/employment.html">Employment</a></li>
+                            <li><a href="http://its.ucsc.edu/terms/">Privacy&#160;Policy&#160;&amp;&#160;Terms&#160;of&#160;Use</a>
+                            </li>
+                            <li><a href="http://safe.ucsc.edu">Sexual&#160;Violence&#160;Prevention&#160;&amp;&#160;Response</a>
+                            </li>
                             </ul>
-                        </span>
-                    </div>
+                            </span>
+                            </div>
 
             </footer>
             <a class="topbutton" href="#" style="display: inline;"><i class="fa fa-chevron-up fa-2x"></i></a>
