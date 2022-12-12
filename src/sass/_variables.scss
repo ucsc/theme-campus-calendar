@@ -33,9 +33,5 @@ $max-width: 67.5em;
 //==========================
 $screen-size--small: 767px;
 $screen-size--medium: 959px;
-//
-// Breakpoints
-//============================
-$breakpoint__screen-size--medium: new-breakpoint(max-width $screen-size--medium 6);
-$breakpoint__screen-size--small: new-breakpoint(max-width $screen-size--small 4);
+
 
