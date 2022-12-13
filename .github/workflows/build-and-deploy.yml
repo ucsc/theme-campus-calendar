@@ -61,5 +61,7 @@ jobs:
         git diff-index --quiet HEAD || git commit -am "deploy files"  # commit to the repository (ignore if no modification)
     - name: Push changes
       uses: ad-m/github-push-action@master
+      env:
+        GITHUB_TOKEN: ${{github.token}}
       with:
         branch: test
