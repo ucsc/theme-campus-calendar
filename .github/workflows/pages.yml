@@ -1,0 +1,46 @@
+name: deploy-to-pages
+run-name: ${{ github.actor }} is getting his groove on
+on:
+  push:
+    branches:
+      #- '*'         # matches every branch that doesn't contain a '/'
+      #- '*/*'       # matches every branch containing a single '/'
+      - '**'        # matches every branch
+      - '!master'   # excludes master
+permissions:
+  contents: write
+jobs:
+  build:
+    name: Build branch
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code from branch
+      uses: actions/checkout@v3
+    - name: Install node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+    - name: Install dependencies
+      run: npm install
+    - name: Build project
+      run: npm run build
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: github-pages
+        path: dist
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+  
