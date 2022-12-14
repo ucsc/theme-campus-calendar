@@ -1,5 +1,5 @@
 name: build-and-deploy
-run-name: ${{ github.actor }} is building and deploying the dev branch
+run-name: ${{ github.actor }} is building and deploying
 on:
   push:
     branches:
@@ -31,7 +31,7 @@ jobs:
         name: github-pages
         path: dist
   deploy:
-    name: Deploy to dev branch Github Pages
+    name: Deploy dev branch to Github Pages
     needs: build
     permissions:
       pages: write
